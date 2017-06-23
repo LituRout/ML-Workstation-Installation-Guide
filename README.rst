@@ -231,10 +231,10 @@ Close all your terminals and open a new terminal to test. Also make sure your te
 
 .. code:: python
 
-        (ml) $ python
-        $ import tensorflow as tf
-        $ sess = tf.InteractiveSession()
-        $ sess.close()
+        (ml) python
+        import tensorflow as tf
+        sess = tf.InteractiveSession()
+        sess.close()
 
 Install Docker
 ==============
