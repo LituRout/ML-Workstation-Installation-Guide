@@ -229,7 +229,7 @@ This will build the pip package required for installing TensorFlow in your /tmp/
 
 Close all your terminals and open a new terminal to test. Also make sure your terminal is not in the ‘tensorflow’ directory.
 
-.. code:: shell
+.. code:: python
 
         (ml) $ python
         $ import tensorflow as tf
