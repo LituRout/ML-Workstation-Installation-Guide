@@ -1,3 +1,6 @@
+ML Workstation Installation Guide
+*********************************
+
 In this tutorial I will be going through how to install various software for machine learning development using Anaconda Python and Ubuntu 16.04. This tutorial is mainly based on doing reinforcement learning and includes how to install alot of OpenAI’s software. This will also include building the latest version of TensorFlow from sources. 
 
 It took me a while to convert, but now Anaconda is my go to for anything Python related.  Ananconda also ensures that all packages installed in a environment are optimized for performance and will manage package versions to avoid dependency conflicts. Anaconda just makes managing and installing your packages so much easier.
