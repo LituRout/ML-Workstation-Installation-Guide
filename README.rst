@@ -69,7 +69,7 @@ We will need to build additional pylons, I mean packages.  We will install pip i
 Install Nvidia Toolkit 8.0 & CudNN 6.0
 ======================================
 
-**Update & Install Nvidia Drivers**
+**Skip this section if you do not have a compatible NVidia GPU**
 
 You must also have the 375 (or later) NVidia drivers installed, this can easily be done from Ubuntu’s built in additional drivers (press windows key and search additional drivers) after you update your driver packages by:
 
