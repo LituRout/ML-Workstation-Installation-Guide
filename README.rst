@@ -123,7 +123,7 @@ Install Tensorflow From Sources
         
 **Install Bazel**
 
-Instructions also on `Bazel <http://www.bazel.io/docs/install.html>`_ website
+You will need Google's compiler Bazel to install TensorFlow from sources.  Instructions also on `Bazel <http://www.bazel.io/docs/install.html>`_ website
 
 .. code::
 
