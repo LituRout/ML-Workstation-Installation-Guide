@@ -153,7 +153,7 @@ Unless you want absolute bleeding edge I highly recommend checking-out to the la
         $ source activate ml
         (ml) $  ./configure
 
-The configure script is pretty good at finding the proper to use settings.  Use defaults by pressing enter for all except the option for CUDA if using a GPU and might as well enable Cloud Support.  Here is how my install looked.
+The configure script is pretty good at finding the proper to use settings.  Use defaults by pressing enter for all except the option for CUDA support if you are using a GPU. It doesn't hurt to install cloud support as well.  Here is how my install looked.
 
 .. code:: shell
 
