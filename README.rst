@@ -86,7 +86,7 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 
         $ cd ~/Downloads 
         $ wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
-        $ sudo sh cuda_8.0.61_375.26_linux.run --override --silent --toolkit  
+        $ sudo sh cuda_8.0.61_375.26_linux-run --override --silent --toolkit  
 
 This will install cuda into: /usr/local/cuda
 
