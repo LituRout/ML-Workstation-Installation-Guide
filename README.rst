@@ -219,7 +219,7 @@ This will build the pip package required for installing TensorFlow in your /tmp/
 
 .. code:: shell
 
-        (ml) $bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+        (ml) $ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
 **Install Tensorflow using Pip**
 
