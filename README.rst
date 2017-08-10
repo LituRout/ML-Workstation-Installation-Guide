@@ -238,6 +238,13 @@ Close all your terminals and open a new terminal to test. Also make sure your te
         import tensorflow as tf
         sess = tf.InteractiveSession()
         sess.close()
+        
+I noticed on my machine after installing TensorFlow my matplotlib stopped working, to resolve this I had to.
+
+.. code:: python
+
+        conda remove matplotlib
+        pip install matplotlib
 
 Install Docker
 ==============
