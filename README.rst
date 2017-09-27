@@ -19,7 +19,8 @@ Paste each line one at a time (without the $) using Shift + Ctrl + V
 
 .. code:: shell
 
-        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common openjdk-8-jdk coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf
+        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common openjdk-8-jdk coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf wget unzip git nasm tar libbz2-dev libgtk2.0-dev libfluidsynth-dev libgme-dev libopenal-dev timidity libwildmidi-dev python3-dev python3-pip python3-wheel
+
 
 Install Anaconda
 ================
@@ -85,8 +86,8 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 .. code:: shell
 
         $ cd ~/Downloads 
-        $ wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
-        $ sudo sh cuda_8.0.61_375.26_linux-run --override --silent --toolkit  
+        $ wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
+        $ sudo sh cuda_9.0.176_384.81_linux.run --override --silent --toolkit  
 
 This will install cuda into: /usr/local/cuda
 
@@ -94,7 +95,7 @@ To install CudNN download `cuDNN v6.0 Library for Linux <https://developer.nvidi
 
 .. code:: shell
 
-        $ tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz
+        $ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
         $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
         $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
         $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -145,7 +146,7 @@ Unless you want absolute bleeding edge I highly recommend checking-out to the la
 .. code:: shell
 
         $ cd ~/tensorflow
-        $ git checkout r1.2
+        $ git checkout mastercd 
 
 
 **Configure Tensorflow Installation**
@@ -179,9 +180,9 @@ The configure script is pretty good at finding the proper to use settings.  Use 
         Do you wish to build TensorFlow with CUDA support? [y/N] Y
         CUDA support will be enabled for TensorFlow
         Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: 
-        Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: 
+        Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: 9.0
         Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
-        Please specify the Cudnn version you want to use. [Leave empty to use system default]: 
+        Please specify the Cudnn version you want to use. [Leave empty to use system default]: 7
         Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
         Please specify a list of comma-separated Cuda compute capabilities you want to build with.
         You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
@@ -219,7 +220,7 @@ This will build the pip package required for installing TensorFlow in your /tmp/
 
 .. code:: shell
 
-        (ml) $ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+        (ml) $ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg/
 
 **Install Tensorflow using Pip**
 
