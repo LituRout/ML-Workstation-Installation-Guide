@@ -146,7 +146,7 @@ Unless you want absolute bleeding edge I highly recommend checking-out to the la
 .. code:: shell
 
         $ cd ~/tensorflow
-        $ git checkout mastercd 
+        $ git checkout master
 
 
 **Configure Tensorflow Installation**
