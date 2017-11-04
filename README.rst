@@ -67,7 +67,7 @@ We will need to build additional pylons, I mean packages.  We will install pip i
 
         (ml) $ conda install pip six libgcc swig pyopengl opencv
 
-Install Nvidia Toolkit 9.0 & CudNN 6.0
+Install Nvidia Toolkit 9.0 & CudNN 7.0
 ======================================
 
 **Skip this section if you do not have a compatible NVidia GPU**
@@ -91,7 +91,7 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 
 This will install cuda into: /usr/local/cuda
 
-To install CudNN download `cuDNN v6.0 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from Nvidia website and extract into /usr/local/cuda via:  
+To install CudNN download `cuDNN v7.0 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from Nvidia website and extract into /usr/local/cuda via:  
 
 .. code:: shell
 
