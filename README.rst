@@ -19,11 +19,13 @@ Paste each line one at a time (without the $) using Shift + Ctrl + V
 
 .. code:: shell
 
-        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common openjdk-8-jdk coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf wget unzip git nasm tar libbz2-dev libgtk2.0-dev libfluidsynth-dev libgme-dev libopenal-dev timidity libwildmidi-dev python3-dev python3-pip python3-wheel
+        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common openjdk-8-jdk coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf wget unzip git nasm tar libbz2-dev libgtk2.0-dev libfluidsynth-dev libgme-dev libopenal-dev timidity libwildmidi-dev python3-dev python3-pip python3-wheel python-virtualenv python3-numpy
 
 
-Install Anaconda
-================
+Install Anaconda or Python VirtualEnv
+=====================================
+
+**If using Anaconda**
 
 I would not recommend using Python 3.6 at this time.  Anaconda Python 3.5 is probably the most common version used in python development so lets download and install that.
 
@@ -66,6 +68,23 @@ We will need to build additional pylons, I mean packages.  We will install pip i
 .. code:: shell
 
         (ml) $ conda install pip six libgcc swig pyopengl opencv
+
+**If Using Native Python w/ Virtual Env**
+
+Create a virtualenv and activate it
+
+.. code:: shell
+
+        $ virtualenv -p python3 ~/ml
+        $ source ~/ml/bin/activate
+        
+Update your pip
+
+.. code:: shell
+        
+        $ pip3 install --upgrade pip
+        $ pip3 install 
+
 
 Install Nvidia Toolkit 9.0 & CudNN 7.0
 ======================================
