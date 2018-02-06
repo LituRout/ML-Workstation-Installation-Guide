@@ -110,7 +110,7 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 
 This will install cuda into: /usr/local/cuda
 
-To install CudNN download `cuDNN v7.0 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from Nvidia website and extract into /usr/local/cuda via:  
+To install CudNN download `cuDNN v7.05 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from Nvidia website and extract into /usr/local/cuda via:  
 
 .. code:: shell
 
