@@ -83,7 +83,7 @@ Update your pip
 .. code:: shell
         
         $ pip3 install --upgrade pip
-        $ pip3 install python-opencv 
+        $ pip3 install python-opencv six wheel
 
 
 Install Nvidia Toolkit 9.0 & CudNN 7.0
