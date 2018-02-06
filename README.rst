@@ -181,33 +181,72 @@ The configure script is pretty good at finding the proper to use settings.  Use 
 
 .. code:: shell
 
-        Please specify the location of python. [Default is /home/justin/envs/anaconda3/envs/ml/bin/python]: 
-        Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]: 
-        Do you wish to use jemalloc as the malloc implementation? [Y/n] 
-        jemalloc enabled
-        Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] y
-        Google Cloud Platform support will be enabled for TensorFlow
-        Do you wish to build TensorFlow with Hadoop File System support? [y/N] N
-        No Hadoop File System support will be enabled for TensorFlow
-        Do you wish to build TensorFlow with the XLA just-in-time compiler (experimental)? [y/N] 
-        No XLA support will be enabled for TensorFlow
-        Found possible Python library paths:
-        /home/justin/envs/anaconda3/envs/ml/lib/python3.5/site-packages
-        Please input the desired Python library path to use.  Default is [/home/justin/envs/anaconda3/envs/ml/lib/python3.5/site-packages]
-        Using python library path: /home/justin/envs/anaconda3/envs/ml/lib/python3.5/site-packages
-        Do you wish to build TensorFlow with OpenCL support? [y/N] N
-        No OpenCL support will be enabled for TensorFlow
-        Do you wish to build TensorFlow with CUDA support? [y/N] Y
-        CUDA support will be enabled for TensorFlow
-        Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: 
-        Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: 9.0
-        Please specify the location where CUDA  toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
-        Please specify the Cudnn version you want to use. [Leave empty to use system default]: 7
-        Please specify the location where cuDNN  library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
-        Please specify a list of comma-separated Cuda compute capabilities you want to build with.
-        You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
-        Please note that each additional compute capability significantly increases your build time and binary size.
-        [Default is: "3.5,5.2"]: 3.5
+        Please input the desired Python library path to use.  Default is [/home/justin/envs/ml/lib/python3.5/site-packages]
+
+    Do you wish to build TensorFlow with jemalloc as malloc support? [Y/n]: 
+    jemalloc as malloc support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with Google Cloud Platform support? [Y/n]: 
+    Google Cloud Platform support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with Hadoop File System support? [Y/n]: 
+    Hadoop File System support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with Amazon S3 File System support? [Y/n]: 
+    Amazon S3 File System support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with XLA JIT support? [y/N]: 
+    No XLA JIT support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with GDR support? [y/N]: 
+    No GDR support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with VERBS support? [y/N]: 
+    No VERBS support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: 
+    No OpenCL SYCL support will be enabled for TensorFlow.
+
+    Do you wish to build TensorFlow with CUDA support? [y/N]: Y
+    CUDA support will be enabled for TensorFlow.
+
+    Please specify the CUDA SDK version you want to use, e.g. 7.0. [Leave empty to default to CUDA 9.0]: 
+
+
+    Please specify the location where CUDA 9.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local            /cuda]: 
+
+
+    Please specify the cuDNN version you want to use. [Leave empty to default to cuDNN 7.0]: 7.0.5
+
+
+    Please specify the location where cuDNN 7.0.5 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:
+
+
+    Please specify a list of comma-separated Cuda compute capabilities you want to build with.
+    You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
+    Please note that each additional compute capability significantly increases your build time and binary size. [Default is:   3.0,3.0]
+
+
+    Do you want to use clang as CUDA compiler? [y/N]: 
+    nvcc will be used as CUDA compiler.
+
+    Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]: 
+
+    Do you wish to build TensorFlow with MPI support? [y/N]: 
+    No MPI support will be enabled for TensorFlow.
+
+    Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]: 
+
+
+    Add "--config=mkl" to your bazel command to build with MKL support.
+    Please note that MKL on MacOS or windows is still not supported.
+    If you would like to use a local MKL instead of downloading, please set the environment variable "TF_MKL_ROOT" every time before build.
+
+    Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: 
+    Not configuring the WORKSPACE for Android builds.
+
+    Configuration finished
+
 
 You can find the compute capability of your NVidia card `here <https://developer.nvidia.com/cuda-gpus>`_ 
 
@@ -215,7 +254,6 @@ If all was done correctly you should see:
 
 .. code:: shell
 
-        INFO: All external dependencies fetched successfully.
         Configuration finished
 
 **Build Tensorflow**
