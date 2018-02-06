@@ -83,7 +83,7 @@ Update your pip
 .. code:: shell
         
         $ pip3 install --upgrade pip
-        $ pip3 install 
+        $ pip3 install python-opencv 
 
 
 Install Nvidia Toolkit 9.0 & CudNN 7.0
@@ -106,7 +106,7 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 
         $ cd ~/Downloads 
         $ wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
-        $ sudo sh cuda_9.0.176_384.81_linux.run --override --silent --toolkit  
+        $ sudo sh cuda_9.0.176_384.81_linux-run --override --silent --toolkit  
 
 This will install cuda into: /usr/local/cuda
 
