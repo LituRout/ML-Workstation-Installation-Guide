@@ -27,11 +27,11 @@ Install Anaconda or Python VirtualEnv
 
 **If using Anaconda**
 
-I would not recommend using Python 3.6 at this time.  Anaconda Python 3.5 is probably the most common version used in python development so lets download and install that.
+We can download the latest version of Anaconda but I prefer to setup in an conda environment using Python 3.5.
 
 .. code:: shell
 
-        $ wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+        $ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 
 and install:
 
@@ -39,7 +39,7 @@ and install:
 
         $ bash Anaconda3-4.2.0-Linux-x86_64.sh
 
-When Anaconda asks if you would wish prepend the Anaconda install location to your bash type in ‘yes’, but if you accidentally defaulted no by pressing enter you can:
+When Anaconda asks if you would wish prepend the Anaconda install location to your bash press enter for no.  I prefer to create my own bash alias for activitating my python environments (I run alot!) which I will show how to do later.  But if Anaconda is the only Python you plan on using type yes or edit your bashrc file with the following:
 
 .. code:: shell
 
@@ -51,8 +51,16 @@ and copy and paste this in the bottom:
 
         export PATH="/home/$USER/anaconda3/bin:$PATH"
 
-You will have to open up a new terminal to use Anaconda. Now the best thing to do is to create a new isolated environment to manage package versions so that you don’t have to reinstall Anaconda if you flub your python packages.
+Now the best thing to do is to create a new isolated environment to manage package versions so that you don’t have to reinstall Anaconda if you flub your python packages.  If like me and you have not added anaconda to your path you will have to source it first using the following.
 
+
+.. code:: shell
+
+        # Only if you have not added Anaconda to your path in your bashrc.
+        $ export PATH="/home/$USER/anaconda3/bin:$PATH"
+        
+We can now create a Anaconda environment, adding the anaconda argument at the end will install all the Anaconda base packages.  I prefer to use python 3.5 as I feel it is the most stable with all other libraries.
+        
 .. code:: shell
 
         $ conda create --name ml python=3.5 anaconda
@@ -63,13 +71,33 @@ and activate the environment:
 
         $ source activate ml
 
-We will need to build additional pylons, I mean packages.  We will install pip into our conda environment but the general rule is to always try installing a package with conda first, if that is not possible, then use pip.
+We will need to build additional pylons, I mean packages.  We will install pip into our conda environment but the general rule is to always try installing a package with conda first, if that is not possible, then use pip.  
 
 .. code:: shell
 
-        (ml) $ conda install pip six libgcc swig pyopengl opencv
+        (ml) $ conda install pip six libgcc swig pyopengl opencv 
+        
+Now if your like me and you didn't add Anaconda to your path you can create an alias by adding the following to your '~/.bash_aliases' file.
 
-**If Using Native Python w/ Virtual Env**
+Open up your '~/.bash_aliases' file:
+
+.. code:: shell
+ 
+        $ gedit ~/.bash_aliases
+        
+and add the following:
+
+.. code:: bash
+
+        alias anaml='export PATH="/home/$USER/anaconda3/bin:$PATH" && echo Activating Conda Environment && source activate ml'
+
+Now with an alias created you can activate your environment simply by calling from the terminal:
+
+.. code:: shell
+
+        $ anaml
+
+**If Using Native Python 3.5 w/ Virtual Env**
 
 Create a virtualenv and activate it
 
@@ -84,9 +112,15 @@ Update your pip
         
         $ pip3 install --upgrade pip
         $ pip3 install python-opencv six wheel
+        
+Now if your lazy like me you can create an alias to activate the environment:
+
+.. code:: bash
+
+        alias ml='source ~/ml/bin/activate'
 
 
-Install Nvidia Toolkit 9.0 & CudNN 7.0
+Install nVidia Toolkit 9.0 & CudNN 7.0
 ======================================
 
 **Skip this section if you do not have a compatible NVidia GPU**
@@ -100,7 +134,7 @@ You must also have the 375 (or later) NVidia drivers installed, this can easily 
 
 Once installed using additional drivers restart your computer. If you experience any troubles booting linux or logging in: try disabling fast & safe boot in your bios and modifying your grub boot options to enable nomodeset.
 
-To install the Nvidia Toolkit download base installation .run file from `Nvidia <https://developer.nvidia.com/cuda-toolkit>`_ website.
+To install the nVidia Toolkit download base installation .run file from `nVidia <https://developer.nvidia.com/cuda-toolkit>`_ website.  I prefer to use the .run file over the deb file because it will not override your current nVidia drivers with version 384.
 
 .. code:: shell
 
@@ -110,7 +144,15 @@ To install the Nvidia Toolkit download base installation .run file from `Nvidia 
 
 This will install cuda into: /usr/local/cuda
 
-To install CudNN download `cuDNN v7.05 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from Nvidia website and extract into /usr/local/cuda via:  
+To install CudNN download `cuDNN v7.05 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from nVidia website.  If the curl download doesn't work you will have to create an account with nVidia and download from the web.
+
+
+.. code:: shell
+
+        $ cd ~/Downloads
+        $ curl --header 'Host: developer2.download.nvidia.com' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'http://developer2.download.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.0_20171129/cudnn-9.0-linux-x64-v7.tgz?WzjERqacCFAVyu-8fVnp5zKpN9n4ElwD34ylsXEnZurD1dvVuZEvl4gjTRr9g2d0M2Er4Kyp7is4UtQKT5oLXcrZwa-TyrX4_fofmwFNQu9Yarp684Qc0RvLw7xEbEnRApAHEjyDOIDeODK7fTd64AcLE9gOfFJNh6oK2EZRP6hGwYP50FwphsJ4ft8GzX_vm6M3iO6uGMQ' --output 'cudnn-9.0-linux-x64-v7.tgz'
+
+and extract into /usr/local/cuda via:  
 
 .. code:: shell
 
@@ -124,16 +166,11 @@ Then update your bash file:
 
 .. code:: shell
 
-    $ gedit ~/.bashrc
+    $ echo $'export CUDA_HOME=/usr/local/cuda\nexport LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"\nexport PATH=$PATH:/usr/local/cuda/bin' >> ~/.bashrc
 
 This will open your `bash file <http://askubuntu.com/questions/540683/what-is-a-bashrc-file-and-what-does-it-do>`_ in a text editor which you will scroll to the bottom and add these lines:
 
-.. code::
-
-        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
-        export CUDA_HOME=/usr/local/cuda
-
-Once you save and close the text file you can return to your original terminal and type this command to reload your .bashrc file, or easier yet just close your terminal and open a new one.
+To update your terminal type this command to reload your .bashrc file, or easier yet just close your terminal and open a new one.
 
 .. code:: shell
 
