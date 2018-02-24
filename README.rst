@@ -148,15 +148,7 @@ To install the nVidia Toolkit download base installation .run file from `nVidia 
 
 This will install cuda into: /usr/local/cuda
 
-To install CudNN download `cuDNN v7.05 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from nVidia website.  If the curl download doesn't work you will have to create an account with nVidia and download from the web.
-
-
-.. code:: shell
-
-        $ cd ~/Downloads
-        $ curl --header 'Host: developer2.download.nvidia.com' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --header 'DNT: 1' --header 'Upgrade-Insecure-Requests: 1' 'http://developer2.download.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.0_20171129/cudnn-9.0-linux-x64-v7.tgz?WzjERqacCFAVyu-8fVnp5zKpN9n4ElwD34ylsXEnZurD1dvVuZEvl4gjTRr9g2d0M2Er4Kyp7is4UtQKT5oLXcrZwa-TyrX4_fofmwFNQu9Yarp684Qc0RvLw7xEbEnRApAHEjyDOIDeODK7fTd64AcLE9gOfFJNh6oK2EZRP6hGwYP50FwphsJ4ft8GzX_vm6M3iO6uGMQ' --output 'cudnn-9.0-linux-x64-v7.tgz'
-
-and extract into /usr/local/cuda via:  
+To install CudNN download `cuDNN v7.05 Library for Linux <https://developer.nvidia.com/cudnn>`_ for Cuda 9.0 from nVidia website  and extract into /usr/local/cuda via:  
 
 .. code:: shell
 
