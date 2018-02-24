@@ -1,9 +1,7 @@
 ML Workstation Installation Guide
 *********************************
 
-In this tutorial I will be going through how to install various software for machine learning development using Anaconda Python and Ubuntu 16.04. This tutorial is mainly based on doing reinforcement learning and includes how to install alot of OpenAI’s software. This will also include building the latest version of TensorFlow from sources. 
-
-It took me a while to convert, but now Anaconda is my go to for anything Python related.  Ananconda also ensures that all packages installed in a environment are optimized for performance and will manage package versions to avoid dependency conflicts. Anaconda just makes managing and installing your packages so much easier.
+In this tutorial I will be going through how to install various software for machine learning development using Anaconda Python or native Python 3.5 and Ubuntu 16.04. This tutorial is mainly based on doing reinforcement learning and includes how to install alot of OpenAI’s software. This will also include building the latest version of TensorFlow from sources. 
 
 In order to use TensorFlow with GPU support you must have a NVidia graphic card with a minimum `compute capability <https://developer.nvidia.com/cuda-gpus>`_ of 3.0 .
 
@@ -19,7 +17,15 @@ Paste each line one at a time (without the $) using Shift + Ctrl + V
 
 .. code:: shell
 
-        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common openjdk-8-jdk coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf wget unzip git nasm tar libbz2-dev libgtk2.0-dev libfluidsynth-dev libgme-dev libopenal-dev timidity libwildmidi-dev python3-dev python3-pip python3-wheel python-virtualenv python3-numpy
+        $ sudo apt-get install git python-dev python3-dev build-essential swig libcurl3-dev libcupti-dev golang libjpeg-turbo8-dev make tmux htop cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev apt-transport-https ca-certificates curl software-properties-common coreutils mercurial libav-tools libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libsdl1.2-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libtiff5-dev libx11-6 libx11-dev fluid-soundfont-gm timgm6mb-soundfont xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic fontconfig fonts-freefont-ttf wget unzip git nasm tar libbz2-dev libgtk2.0-dev libfluidsynth-dev libgme-dev libopenal-dev timidity libwildmidi-dev python-pip python3-pip python-wheel python3-wheel python-virtualenv 
+        
+TensorFlow's build system Bazel also requires Java to be installed.
+
+.. code:: shell
+
+        $ sudo add-apt-repository ppa:webupd8team/java
+        $ sudo apt-get update
+        $ sudo apt-get install oracle-java8-installer
 
 
 Install Anaconda or Python VirtualEnv
@@ -27,7 +33,7 @@ Install Anaconda or Python VirtualEnv
 
 **If using Anaconda**
 
-We can download the latest version of Anaconda but I prefer to setup in an conda environment using Python 3.5.
+You can download the latest version of Anaconda but I prefer to setup in a conda environment using Python 3.5.
 
 .. code:: shell
 
@@ -51,12 +57,10 @@ and copy and paste this in the bottom:
 
         export PATH="/home/$USER/anaconda3/bin:$PATH"
 
-Now the best thing to do is to create a new isolated environment to manage package versions so that you don’t have to reinstall Anaconda if you flub your python packages.  If like me and you have not added anaconda to your path you will have to source it first using the following.
-
+Now the best thing to do is to create a new isolated environment to manage package versions so that you don’t have to reinstall Anaconda if you flub your python packages.  If like me and you have not added anaconda to your path you will have to add it temporarily using the following.
 
 .. code:: shell
 
-        # Only if you have not added Anaconda to your path in your bashrc.
         $ export PATH="/home/$USER/anaconda3/bin:$PATH"
         
 We can now create a Anaconda environment, adding the anaconda argument at the end will install all the Anaconda base packages.  I prefer to use python 3.5 as I feel it is the most stable with all other libraries.
@@ -91,7 +95,7 @@ and add the following:
 
         alias anaml='export PATH="/home/$USER/anaconda3/bin:$PATH" && echo Activating Conda Environment && source activate ml'
 
-Now with an alias created you can activate your environment simply by calling from the terminal:
+Now with an alias created you can activate your environment simply by calling from the terminal with:
 
 .. code:: shell
 
