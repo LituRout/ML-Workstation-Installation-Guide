@@ -93,13 +93,13 @@ and add the following:
 
 .. code:: bash
 
-        alias anaml='export PATH="/home/$USER/anaconda3/bin:$PATH" && echo Activating Conda Environment && source activate ml'
+        alias ana='export PATH="/home/$USER/anaconda3/bin:$PATH" && echo Activating Conda Environment && source activate ml'
 
 Now with an alias created you can activate your environment simply by calling from the terminal with:
 
 .. code:: shell
 
-        $ anaml
+        $ ana
 
 **If Using Native Python 3.5 w/ Virtual Env**
 
