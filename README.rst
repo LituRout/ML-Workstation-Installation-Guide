@@ -115,7 +115,7 @@ Update your pip
 .. code:: shell
         
     pip3 install --upgrade pip && \
-    pip3 install python-opencv six wheel
+    pip3 install numpy python-opencv six wheel
         
 Now if your lazy like me you can create an alias to activate the environment:
 
