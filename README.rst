@@ -406,9 +406,7 @@ Followed by Universe:
 
 .. code:: shell
 
-        cd ~ && git clone https://github.com/openai/universe.git
-        cd universe
-        pip install -e .
+        pip install universe
 
 We can also clone Open AI’s starter agent which will train an agent using the A3C Algorithim.
 
