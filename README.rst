@@ -83,7 +83,7 @@ We will need to build additional pylons, I mean packages.  We will install pip i
         
 Now if your like me and you didn't add Anaconda to your path you can create an alias by adding the following to your '~/.bash_aliases' file.
 
-Open up your '~/.bash_aliases' file:
+Open up your `~/.bash_aliases` file:
 
 .. code:: shell
  
