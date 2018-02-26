@@ -114,13 +114,14 @@ Update your pip
 
 .. code:: shell
         
-    pip3 install --upgrade pip && \
-    pip3 install numpy python-opencv six wheel
+    pip install --upgrade pip && \
+    pip install numpy opencv-python six wheel
         
 Now if your lazy like me you can create an alias to activate the environment:
 
 .. code:: bash
-
+    gedit ~/.bash_aliases
+    # And add in:
     alias ml='source ~/ml/bin/activate'
 
 
@@ -397,56 +398,22 @@ If you plan on doing any Reinforcement Learning you are definitely going to want
 
 .. code:: shell
 
-        $ source activate ml
-        (ml) $ cd ~
-        (ml) $ git clone https://github.com/openai/gym.git
-        (ml) $ cd gym
-        (ml) $ pip install -e '.[all]'
+        cd ~ && git clone https://github.com/openai/gym.git
+        cd gym
+        pip install -e .
 
 Followed by Universe:
 
 .. code:: shell
 
-        (ml) $ cd ~
-        (ml) $ git clone https://github.com/openai/universe.git
-        (ml) $ cd universe
-        (ml) $ pip install -e .
+        cd ~ && git clone https://github.com/openai/universe.git
+        cd universe
+        pip install -e .
 
 We can also clone Open AI’s starter agent which will train an agent using the A3C Algorithim.
 
 .. code:: shell
 
-        (ml) $ git clone https://github.com/openai/universe-starter-agent.git
-        (ml) $ cd ~/universe-starter-agent
-        (ml) $ python train.py --num-workers 4 --env-id PongDeterministic-v0 --log-dir /tmp/vncpong --visualise
-
-**Install Pygame & Python Learning Environment**
-
-Some of Open AI’s software depends on PLE and pygame, so best install that as well.
-
-.. code:: shell
-
-        (ml) $ hg clone https://bitbucket.org/pygame/pygame
-        (ml) $ cd pygame
-        (ml) $ python setup.py build
-        (ml) $ python setup.py install
-
-.. code:: shell
-
-        (ml) $ git clone https://github.com/ntasfi/PyGame-Learning-Environment.git
-        (ml) $ cd PyGame-Learning-Environment
-        (ml) $ pip install -e .
-
-.. code:: shell
-
-        (ml) $ git clone https://github.com/lusob/gym-ple.git
-        (ml) $ cd gym-ple
-        (ml) $ pip install -e .
-
-**Install Baslines**
-
-`Baselines <https://github.com/openai/baselines>`_ allows you to easily implement DQN (and hopefully more in the future) algorithims.
-
-.. code:: shell
-
-        (ml) $ pip install baselines
+        cd ~ && git clone https://github.com/openai/universe-starter-agent.git
+        cd ~/universe-starter-agent
+        python train.py --num-workers 4 --env-id PongDeterministic-v0 --log-dir /tmp/vncpong --visualise
